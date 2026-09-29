@@ -1,0 +1,1814 @@
+{
+  "seed": "7",
+  "scenarios": 26,
+  "breaks": 19,
+  "benign": 4,
+  "negatives": 3,
+  "weights": {
+    "image": 3,
+    "model": 3,
+    "infra": 2,
+    "policy": 2,
+    "workload_identity": 2,
+    "sbom": 1
+  },
+  "max_rgs": 13,
+  "mean_true_rgs_on_breaks": 3.32,
+  "summary": {
+    "sbom_only": {
+      "breaks_detected": 2,
+      "breaks": 19,
+      "rate": 0.1053,
+      "exact_localization": 2,
+      "mean_rgs_on_breaks": 0.11,
+      "benign_flagged": 0,
+      "benign": 4,
+      "negatives_detected": 0,
+      "negatives": 3,
+      "missed_breaks": [
+        "image_swapped_after_signing",
+        "model_id_changed",
+        "prompt_config_changed",
+        "model_config_from_unapproved_run",
+        "fork_workflow_identity",
+        "other_branch_identity",
+        "unapproved_workflow_file",
+        "unpinned_action",
+        "tfplan_state_mismatch",
+        "unapproved_plan_applied",
+        "secret_scope_expansion",
+        "stale_policy_bundle",
+        "policy_version_label_spoof",
+        "wrong_workload_identity",
+        "replayed_release_root",
+        "expired_cert",
+        "mutable_tag_moved"
+      ]
+    },
+    "signature_only": {
+      "breaks_detected": 1,
+      "breaks": 19,
+      "rate": 0.0526,
+      "exact_localization": 0,
+      "mean_rgs_on_breaks": 0.16,
+      "benign_flagged": 0,
+      "benign": 4,
+      "negatives_detected": 0,
+      "negatives": 3,
+      "missed_breaks": [
+        "sbom_for_other_digest",
+        "sbom_missing",
+        "model_id_changed",
+        "prompt_config_changed",
+        "model_config_from_unapproved_run",
+        "fork_workflow_identity",
+        "other_branch_identity",
+        "unapproved_workflow_file",
+        "unpinned_action",
+        "tfplan_state_mismatch",
+        "unapproved_plan_applied",
+        "secret_scope_expansion",
+        "stale_policy_bundle",
+        "policy_version_label_spoof",
+        "wrong_workload_identity",
+        "replayed_release_root",
+        "expired_cert",
+        "mutable_tag_moved"
+      ]
+    },
+    "slsa_only": {
+      "breaks_detected": 4,
+      "breaks": 19,
+      "rate": 0.2105,
+      "exact_localization": 0,
+      "mean_rgs_on_breaks": 0.63,
+      "benign_flagged": 0,
+      "benign": 4,
+      "negatives_detected": 0,
+      "negatives": 3,
+      "missed_breaks": [
+        "sbom_for_other_digest",
+        "sbom_missing",
+        "model_id_changed",
+        "prompt_config_changed",
+        "model_config_from_unapproved_run",
+        "unapproved_workflow_file",
+        "unpinned_action",
+        "tfplan_state_mismatch",
+        "unapproved_plan_applied",
+        "secret_scope_expansion",
+        "stale_policy_bundle",
+        "policy_version_label_spoof",
+        "wrong_workload_identity",
+        "replayed_release_root",
+        "mutable_tag_moved"
+      ]
+    },
+    "manual_manifest": {
+      "breaks_detected": 5,
+      "breaks": 19,
+      "rate": 0.2632,
+      "exact_localization": 3,
+      "mean_rgs_on_breaks": 0.68,
+      "benign_flagged": 0,
+      "benign": 4,
+      "negatives_detected": 0,
+      "negatives": 3,
+      "missed_breaks": [
+        "sbom_for_other_digest",
+        "sbom_missing",
+        "model_config_from_unapproved_run",
+        "fork_workflow_identity",
+        "other_branch_identity",
+        "unapproved_workflow_file",
+        "unpinned_action",
+        "unapproved_plan_applied",
+        "stale_policy_bundle",
+        "policy_version_label_spoof",
+        "wrong_workload_identity",
+        "replayed_release_root",
+        "expired_cert",
+        "mutable_tag_moved"
+      ]
+    },
+    "dpg_no_linking": {
+      "breaks_detected": 14,
+      "breaks": 19,
+      "rate": 0.7368,
+      "exact_localization": 14,
+      "mean_rgs_on_breaks": 2.16,
+      "benign_flagged": 1,
+      "benign": 4,
+      "negatives_detected": 0,
+      "negatives": 3,
+      "missed_breaks": [
+        "model_config_from_unapproved_run",
+        "stale_policy_bundle",
+        "wrong_workload_identity",
+        "replayed_release_root",
+        "mutable_tag_moved"
+      ]
+    },
+    "dpg": {
+      "breaks_detected": 19,
+      "breaks": 19,
+      "rate": 1.0,
+      "exact_localization": 19,
+      "mean_rgs_on_breaks": 3.32,
+      "benign_flagged": 1,
+      "benign": 4,
+      "negatives_detected": 0,
+      "negatives": 3,
+      "missed_breaks": []
+    }
+  },
+  "linking_only": [
+    "model_config_from_unapproved_run",
+    "stale_policy_bundle",
+    "wrong_workload_identity",
+    "replayed_release_root",
+    "mutable_tag_moved"
+  ],
+  "rows": [
+    {
+      "id": "clean",
+      "kind": "benign",
+      "when": "assembly",
+      "what": "release 1.4.0 deployed exactly as approved",
+      "truth": [],
+      "true_rgs": 0,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        }
+      }
+    },
+    {
+      "id": "sanctioned_rollback",
+      "kind": "benign",
+      "when": "assembly",
+      "what": "rollback to 1.3.0 re-approved as a new root (sequence 3)",
+      "truth": [],
+      "true_rgs": 0,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        }
+      }
+    },
+    {
+      "id": "hotfix_release",
+      "kind": "benign",
+      "when": "assembly",
+      "what": "hotfix 1.4.1 built, approved (sequence 3) and deployed",
+      "truth": [],
+      "true_rgs": 0,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        }
+      }
+    },
+    {
+      "id": "sbom_regenerated",
+      "kind": "benign",
+      "when": "drift",
+      "what": "registry-attached SBOM regenerated (new serialNumber), same contents",
+      "truth": [],
+      "true_rgs": 0,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": true,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "image_swapped_after_signing",
+      "kind": "break",
+      "when": "drift",
+      "what": "running image replaced after signing, with a matching attacker SBOM",
+      "truth": [
+        "image",
+        "sbom"
+      ],
+      "true_rgs": 4,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "image": "no valid signature over the running digest"
+          }
+        },
+        "slsa_only": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "image": "no SLSA provenance from the expected builder identity"
+          }
+        },
+        "manual_manifest": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "image": "differs from the release manifest"
+          }
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "sbom_for_other_digest",
+      "kind": "break",
+      "when": "assembly",
+      "what": "attached SBOM is the previous build's (describes another digest)",
+      "truth": [
+        "sbom"
+      ],
+      "true_rgs": 1,
+      "methods": {
+        "sbom_only": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "sbom": "SBOM describes another digest"
+          }
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "sbom_missing",
+      "kind": "break",
+      "when": "assembly",
+      "what": "SBOM step skipped: no SBOM for the running image",
+      "truth": [
+        "sbom"
+      ],
+      "true_rgs": 1,
+      "methods": {
+        "sbom_only": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "sbom": "no SBOM attached"
+          }
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "sbom"
+          ],
+          "rgs": 1,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "model_id_changed",
+      "kind": "break",
+      "when": "drift",
+      "what": "endpoint switched to another model ID after approval",
+      "truth": [
+        "model"
+      ],
+      "true_rgs": 3,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [
+            "model"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "model": "differs from the release manifest"
+          }
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "model"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "model": "model manifest/config has no verified claim"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "model"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "model": "model manifest/config has no verified claim"
+          }
+        }
+      }
+    },
+    {
+      "id": "prompt_config_changed",
+      "kind": "break",
+      "when": "drift",
+      "what": "system prompt and temperature edited in the live config",
+      "truth": [
+        "model"
+      ],
+      "true_rgs": 3,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [
+            "model"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "model": "differs from the release manifest"
+          }
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "model"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "model": "model manifest/config has no verified claim"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "model"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "model": "model manifest/config has no verified claim"
+          }
+        }
+      }
+    },
+    {
+      "id": "model_config_from_unapproved_run",
+      "kind": "break",
+      "when": "assembly",
+      "what": "model config taken from the unapproved canary run (validly signed)",
+      "truth": [
+        "model"
+      ],
+      "true_rgs": 3,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [
+            "model"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "model": "model manifest/config has no verified claim"
+          }
+        }
+      }
+    },
+    {
+      "id": "fork_workflow_identity",
+      "kind": "break",
+      "when": "assembly",
+      "what": "image built by the same workflow in a fork (CA still issues a cert)",
+      "truth": [
+        "image",
+        "sbom"
+      ],
+      "true_rgs": 4,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "image": "no SLSA provenance from the expected builder identity"
+          }
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "other_branch_identity",
+      "kind": "break",
+      "when": "assembly",
+      "what": "image built from refs/heads/feature-x",
+      "truth": [
+        "image",
+        "sbom"
+      ],
+      "true_rgs": 4,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "image": "no SLSA provenance from the expected builder identity"
+          }
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "unapproved_workflow_file",
+      "kind": "break",
+      "when": "assembly",
+      "what": "image built on main by .github/workflows/debug.yml",
+      "truth": [
+        "image",
+        "sbom"
+      ],
+      "true_rgs": 4,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "unpinned_action",
+      "kind": "break",
+      "when": "assembly",
+      "what": "approved hotfix was built with actions/checkout@v4 (mutable ref)",
+      "truth": [
+        "image"
+      ],
+      "true_rgs": 3,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "tfplan_state_mismatch",
+      "kind": "break",
+      "when": "drift",
+      "what": "applied state differs from the approved plan (ingress made external)",
+      "truth": [
+        "infra"
+      ],
+      "true_rgs": 2,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [
+            "infra"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "infra": "differs from the release manifest"
+          }
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "infra"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "infra": "applied state matches no verified plan"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "infra"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "infra": "applied state matches no verified plan"
+          }
+        }
+      }
+    },
+    {
+      "id": "unapproved_plan_applied",
+      "kind": "break",
+      "when": "assembly",
+      "what": "a locally produced, unattested plan was applied",
+      "truth": [
+        "infra"
+      ],
+      "true_rgs": 2,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "infra"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "infra": "applied state matches no verified plan"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "infra"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "infra": "applied state matches no verified plan"
+          }
+        }
+      }
+    },
+    {
+      "id": "secret_scope_expansion",
+      "kind": "break",
+      "when": "drift",
+      "what": "workload identity gained Key Vault Secrets Officer",
+      "truth": [
+        "infra",
+        "workload_identity"
+      ],
+      "true_rgs": 4,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [
+            "infra"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "infra": "differs from the release manifest"
+          }
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "infra",
+            "workload_identity"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "infra": "applied state matches no verified plan",
+            "workload_identity": "runtime identity/roles not declared by a verified plan"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "infra",
+            "workload_identity"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "infra": "applied state matches no verified plan",
+            "workload_identity": "runtime identity/roles not declared by a verified plan"
+          }
+        }
+      }
+    },
+    {
+      "id": "stale_policy_bundle",
+      "kind": "break",
+      "when": "assembly",
+      "what": "policy bundle 1.3.0 from the superseded release (validly signed)",
+      "truth": [
+        "policy"
+      ],
+      "true_rgs": 2,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [
+            "policy"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "policy": "policy bundle digest + version has no verified claim"
+          }
+        }
+      }
+    },
+    {
+      "id": "policy_version_label_spoof",
+      "kind": "break",
+      "when": "drift",
+      "what": "bundle content reverted to 1.3.0 rules, version label still 1.4.0",
+      "truth": [
+        "policy"
+      ],
+      "true_rgs": 2,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "policy"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "policy": "policy bundle digest + version has no verified claim"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "policy"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "policy": "policy bundle digest + version has no verified claim"
+          }
+        }
+      }
+    },
+    {
+      "id": "wrong_workload_identity",
+      "kind": "break",
+      "when": "assembly",
+      "what": "pod runs as the canary identity (declared in a signed plan)",
+      "truth": [
+        "workload_identity"
+      ],
+      "true_rgs": 2,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [
+            "workload_identity"
+          ],
+          "rgs": 2,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "workload_identity": "runtime identity/roles not declared by a verified plan"
+          }
+        }
+      }
+    },
+    {
+      "id": "replayed_release_root",
+      "kind": "break",
+      "when": "assembly",
+      "what": "old root (sequence 1) replayed: release 1.3.0 redeployed without re-approval",
+      "truth": [
+        "image",
+        "infra",
+        "model",
+        "policy",
+        "sbom"
+      ],
+      "true_rgs": 11,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [
+            "image",
+            "infra",
+            "model",
+            "policy",
+            "sbom"
+          ],
+          "rgs": 11,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest",
+            "infra": "applied state matches no verified plan",
+            "model": "model manifest/config has no verified claim",
+            "policy": "policy bundle digest + version has no verified claim"
+          }
+        }
+      }
+    },
+    {
+      "id": "expired_cert",
+      "kind": "break",
+      "when": "assembly",
+      "what": "stolen ephemeral key used 2 h after its 10-minute certificate expired",
+      "truth": [
+        "image",
+        "sbom"
+      ],
+      "true_rgs": 4,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [
+            "image"
+          ],
+          "rgs": 3,
+          "detected": true,
+          "exact": false,
+          "reasons": {
+            "image": "no SLSA provenance from the expected builder identity"
+          }
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        },
+        "dpg": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "mutable_tag_moved",
+      "kind": "break",
+      "when": "drift",
+      "what": "approved release pinned a tag; the tag was moved to the canary build",
+      "truth": [
+        "image",
+        "sbom"
+      ],
+      "true_rgs": 4,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [
+            "image",
+            "sbom"
+          ],
+          "rgs": 4,
+          "detected": true,
+          "exact": true,
+          "reasons": {
+            "image": "no verified build provenance for the running digest",
+            "sbom": "no verified SBOM attestation for this SBOM and this digest"
+          }
+        }
+      }
+    },
+    {
+      "id": "malicious_commit_approved",
+      "kind": "negative",
+      "when": "assembly",
+      "what": "backdoor merged to main, then built, attested and approved normally",
+      "truth": [
+        "image"
+      ],
+      "true_rgs": 3,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        }
+      }
+    },
+    {
+      "id": "provider_silent_model_update",
+      "kind": "negative",
+      "when": "drift",
+      "what": "provider changes weights behind the same model ID and version",
+      "truth": [
+        "model"
+      ],
+      "true_rgs": 3,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        }
+      }
+    },
+    {
+      "id": "lying_runtime_observer",
+      "kind": "negative",
+      "when": "drift",
+      "what": "compromised node agent reports the approved digest while running another",
+      "truth": [
+        "image"
+      ],
+      "true_rgs": 3,
+      "methods": {
+        "sbom_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "signature_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "slsa_only": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "manual_manifest": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg_no_linking": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        },
+        "dpg": {
+          "flagged": [],
+          "rgs": 0,
+          "detected": false,
+          "exact": false,
+          "reasons": {}
+        }
+      }
+    }
+  ],
+  "provenance": {
+    "commit": "225b50f19b75cefcf23a55a0cff8a420698ddcd6",
+    "command": "python -m hephaestus_ledger bench --out reports",
+    "python": "3.10.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "cryptography": "50.0.1",
+    "terraform_fixture": "1.16.2",
+    "fixtures_sha256": "aa3f7149b870cd62",
+    "generated_at": "2026-09-29T09:16:30+00:00",
+    "seed": "7"
+  }
+}
