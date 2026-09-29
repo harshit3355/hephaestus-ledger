@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install "cryptography>=42" "pytest>=8"
+      - run: python -m pytest -q
+      - name: Gate - approved deployment verifies, a mix-and-match deployment does not
+        run: |
+          python -m hephaestus_ledger demo --out build/clean
+          python -m hephaestus_ledger verify build/clean
+          python -m hephaestus_ledger demo --scenario stale_policy_bundle --out build/stale
+          ! python -m hephaestus_ledger verify build/stale
+      - name: Benchmark
+        run: python -m hephaestus_ledger bench --out build/reports
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: reports-py${{ matrix.python }}
+          path: build/
